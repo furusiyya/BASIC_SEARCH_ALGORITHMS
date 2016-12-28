@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="595.000199999995" prefWidth="1312.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Pane id="" layoutX="0.0" layoutY="-1.0" prefHeight="609.0" prefWidth="1272.0">
+          <children>
+            <Button fx:id="startBtn" layoutX="12.0" layoutY="38.0" mnemonicParsing="false" onAction="#setStart" prefHeight="22.1328125" prefWidth="149.0" text="Set Start" />
+            <Button fx:id="goalBtn" layoutX="161.0" layoutY="39.0" mnemonicParsing="false" onAction="#setGoal" prefHeight="22.1328125" prefWidth="149.0" text="Set Goal" />
+            <Pane id="" fx:id="moniteredPane" layoutX="222.0" layoutY="69.0" prefHeight="513.0001831054688" prefWidth="704.9998779296875" style="" />
+            <Button layoutX="308.0" layoutY="39.0" mnemonicParsing="false" onAction="#clear_graph" prefHeight="22.1328125" prefWidth="149.0" text="Clear" />
+            <Button layoutX="606.0" layoutY="39.0" mnemonicParsing="false" onAction="#add_Heuristic" prefHeight="22.1328125" prefWidth="149.0" text="Add Heuristics" />
+            <Button layoutX="457.0" layoutY="39.0" mnemonicParsing="false" onAction="#reset_Pane" prefHeight="22.1328125" prefWidth="149.0" text="Reset" />
+            <Button layoutX="755.0" layoutY="39.0" mnemonicParsing="false" onAction="#start_Search" prefHeight="22.1328125" prefWidth="149.0" text="Search" />
+            <Label fx:id="type" layoutX="14.0" layoutY="85.0" prefHeight="24.0" prefWidth="246.0" text="Type:">
+              <font>
+                <Font size="20.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label fx:id="enqueue" font="$x1" layoutX="14.0" layoutY="131.0" prefHeight="24.000099999997474" prefWidth="201.00009999999747" text="Enqueuings:" />
+            <Label fx:id="queue_size" font="$x1" layoutX="14.0" layoutY="174.0" prefHeight="24.000099999997474" prefWidth="203.0" text="Queue size:" />
+            <Label fx:id="path_elements" font="$x1" layoutX="14.0" layoutY="223.0" prefHeight="24.000099999997474" prefWidth="203.0" text="Path nodes:" />
+            <Label fx:id="path_cost" font="$x1" layoutX="12.0" layoutY="266.0" prefHeight="24.000099999997474" prefWidth="201.0001220703125" text="Path Length:" />
+            <TableView fx:id="table" layoutX="963.0" layoutY="70.0" prefHeight="513.0001831054688" prefWidth="313.0">
+              <columns>
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="201.0" text="Node" fx:id="heu_node" />
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Cost" fx:id="heu_cost" />
+              </columns>
+            </TableView>
+            <Label fx:id="heuristic_from" layoutX="963.0" layoutY="39.0" prefHeight="24.0" prefWidth="299.0" text="Straight-Line distance to:">
+              <font>
+                <Font name="System Bold" size="13.0" />
+              </font>
+            </Label>
+          </children>
+        </Pane>
+        <MenuBar useSystemMenuBar="true">
+          <menus>
+            <Menu mnemonicParsing="false" text="Type">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#bfs" text="Breadth First Search" />
+                <MenuItem mnemonicParsing="false" onAction="#dfs" text="Depth First Search" />
+                <MenuItem mnemonicParsing="false" onAction="#iterativeDepening" text="Iterative Deepening" />
+                <MenuItem mnemonicParsing="false" onAction="#hillClimb" text="Hill Climbing" />
+                <MenuItem mnemonicParsing="false" onAction="#aStar" text="A Star" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Speed">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#time_1x" text="1x" />
+                <MenuItem mnemonicParsing="false" onAction="#time_2x" text="2x" />
+                <MenuItem mnemonicParsing="false" onAction="#time_3x" text="3x" />
+                <MenuItem mnemonicParsing="false" onAction="#time_4x" text="4x" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Sample">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#sample_tree" text="Tree" />
+                <MenuItem mnemonicParsing="false" text="Graph" />
+                <MenuItem mnemonicParsing="false" onAction="#sample_a_start_graph" text="A Star" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="About" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

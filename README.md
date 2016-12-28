@@ -1,1 +1,1 @@
-# BASIC_SEARCH_ALGORITHMS
+# AI-Path-Search-Algorithms
